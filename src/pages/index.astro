@@ -1,0 +1,56 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Hero from '../components/Hero.astro';
+import FeaturedPost from '../components/FeaturedPost.astro';
+import ArticleGrid from '../components/ArticleGrid.astro';
+import Channels from '../components/Channels.astro';
+import Newsletter from '../components/Newsletter.astro';
+import Footer from '../components/Footer.astro';
+import { getCollection } from 'astro:content';
+
+const allPosts = await getCollection('blog', ({ data }) => !data.draft);
+const sortedPosts = allPosts.sort((a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime());
+
+const featuredPost = sortedPosts.find(p => p.data.featured) || sortedPosts[0];
+const latestPosts = sortedPosts.filter(p => p.id !== featuredPost.id).slice(0, 6);
+
+function formatDate(date: Date) {
+  return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+}
+---
+
+<BaseLayout title="david multiply">
+  <Nav />
+  <main class="max-w-lg md:max-w-3xl lg:max-w-5xl mx-auto px-5">
+    <Hero />
+
+    <FeaturedPost
+      title={featuredPost.data.title}
+      description={featuredPost.data.description}
+      category={featuredPost.data.category}
+      date={formatDate(featuredPost.data.publishDate)}
+      readTime={featuredPost.data.readTime}
+      image={featuredPost.data.image}
+      imageAlt={featuredPost.data.imageAlt}
+      slug={featuredPost.id}
+    />
+
+    <ArticleGrid
+      posts={latestPosts.map(post => ({
+        title: post.data.title,
+        description: post.data.description,
+        category: post.data.category,
+        date: formatDate(post.data.publishDate),
+        readTime: post.data.readTime,
+        image: post.data.image,
+        imageAlt: post.data.imageAlt,
+        slug: post.id,
+      }))}
+    />
+
+    <Channels />
+    <Newsletter />
+  </main>
+  <Footer />
+</BaseLayout>

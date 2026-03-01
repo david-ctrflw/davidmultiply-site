@@ -1,0 +1,91 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+import ArticleCard from '../../components/ArticleCard.astro';
+import Newsletter from '../../components/Newsletter.astro';
+import Footer from '../../components/Footer.astro';
+import { getCollection } from 'astro:content';
+
+const allPosts = await getCollection('blog', ({ data }) => !data.draft);
+const sortedPosts = allPosts.sort((a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime());
+
+const categories = ['All', ...new Set(sortedPosts.map(p => p.data.category))];
+
+function formatDate(date: Date) {
+  return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+}
+---
+
+<BaseLayout title="blog - david multiply">
+  <Nav />
+  <main class="max-w-lg md:max-w-3xl lg:max-w-5xl mx-auto px-5 py-16">
+    <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-4">Blog</h1>
+    <p class="text-zinc-400 text-lg mb-12 max-w-lg">Frameworks, systems, and lessons from building in public.</p>
+
+    <div class="flex items-center gap-6 overflow-x-auto mb-10 no-scrollbar text-sm font-bold uppercase tracking-widest" id="category-tabs">
+      {categories.map((cat, i) => (
+        <button
+          data-filter={cat}
+          class:list={[
+            'whitespace-nowrap pb-2 transition-colors cursor-pointer',
+            i === 0 ? 'text-white border-b-2 border-primary' : 'text-zinc-500 hover:text-white'
+          ]}
+        >
+          {cat}
+        </button>
+      ))}
+    </div>
+
+    <div class="space-y-12 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-12 md:space-y-0" id="posts-grid">
+      {sortedPosts.map((post) => (
+        <div data-category={post.data.category}>
+          <ArticleCard
+            title={post.data.title}
+            description={post.data.description}
+            category={post.data.category}
+            date={formatDate(post.data.publishDate)}
+            readTime={post.data.readTime}
+            image={post.data.image}
+            imageAlt={post.data.imageAlt}
+            slug={post.id}
+          />
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-20">
+      <Newsletter />
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>
+
+<script>
+  const tabs = document.getElementById('category-tabs');
+  const grid = document.getElementById('posts-grid');
+  if (tabs && grid) {
+    const buttons = tabs.querySelectorAll<HTMLButtonElement>('[data-filter]');
+    const cards = grid.querySelectorAll<HTMLElement>('[data-category]');
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const filter = btn.dataset.filter;
+
+        buttons.forEach(b => {
+          b.classList.remove('text-white', 'border-b-2', 'border-primary');
+          b.classList.add('text-zinc-500');
+        });
+        btn.classList.remove('text-zinc-500');
+        btn.classList.add('text-white', 'border-b-2', 'border-primary');
+
+        cards.forEach(card => {
+          if (filter === 'All' || card.dataset.category === filter) {
+            card.style.display = '';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  }
+</script>

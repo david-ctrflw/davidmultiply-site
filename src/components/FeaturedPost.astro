@@ -1,0 +1,34 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  category: string;
+  date: string;
+  readTime: string;
+  image?: string;
+  imageAlt?: string;
+  slug: string;
+}
+
+const { title, description, category, date, readTime, image, imageAlt, slug } = Astro.props;
+---
+
+<section class="py-16 border-t border-border">
+  <div class="flex items-center justify-between mb-8">
+    <h3 class="text-sm font-bold uppercase tracking-widest text-zinc-500">Featured</h3>
+  </div>
+  <a href={`/blog/${slug}`} class="block bg-surface border border-border rounded-xl overflow-hidden group md:flex md:flex-row">
+    <div class="aspect-video md:aspect-[4/3] md:w-1/2 w-full bg-cover bg-center" style={image ? `background-image: url('${image}')` : 'background-color: #1f1f23'}>
+    </div>
+    <div class="p-6 md:p-8 md:flex md:flex-col md:justify-center md:w-1/2">
+      <span class="text-primary text-xs font-bold uppercase tracking-wider mb-3 block">{category}</span>
+      <h4 class="text-2xl font-bold mb-3 leading-snug group-hover:text-primary transition-colors">{title}</h4>
+      <p class="text-zinc-400 text-base mb-6 line-clamp-2">{description}</p>
+      <div class="flex items-center gap-3 text-xs text-zinc-500 font-medium">
+        <span>{date}</span>
+        <span class="w-1 h-1 rounded-full bg-zinc-700"></span>
+        <span>{readTime}</span>
+      </div>
+    </div>
+  </a>
+</section>

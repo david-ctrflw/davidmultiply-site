@@ -1,0 +1,18 @@
+---
+---
+
+<div id="reading-progress" class="fixed top-0 left-0 w-full h-[2px] z-[100] bg-white/5">
+  <div id="reading-bar" class="h-full bg-primary shadow-[0_0_10px_rgba(99,102,241,0.5)]" style="width: 0%;"></div>
+</div>
+
+<script>
+  const bar = document.getElementById('reading-bar');
+  function updateProgress() {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    if (bar) bar.style.width = `${Math.min(progress, 100)}%`;
+  }
+  window.addEventListener('scroll', updateProgress, { passive: true });
+  updateProgress();
+</script>

@@ -1,0 +1,31 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  category: string;
+  date: string;
+  readTime: string;
+  image?: string;
+  imageAlt?: string;
+  slug: string;
+}
+
+const { title, description, category, date, readTime, image, imageAlt, slug } = Astro.props;
+---
+
+<a href={`/blog/${slug}`} class="block group">
+  <article class="flex flex-col gap-4">
+    <div class="flex justify-between items-start gap-4">
+      <div class="flex-1">
+        <span class="text-primary text-[10px] font-bold uppercase tracking-widest mb-2 block">{category}</span>
+        <h5 class="text-lg font-bold leading-tight mb-2 group-hover:text-primary transition-colors">{title}</h5>
+        <p class="text-sm text-zinc-400 line-clamp-2">{description}</p>
+      </div>
+      <div
+        class="w-24 h-24 rounded-lg bg-cover bg-center shrink-0 border border-border"
+        style={image ? `background-image: url('${image}')` : 'background-color: #1f1f23'}
+      ></div>
+    </div>
+    <div class="text-[11px] text-zinc-500 font-medium">{date} &bull; {readTime}</div>
+  </article>
+</a>

@@ -1,0 +1,21 @@
+---
+import PortraitCarousel from './PortraitCarousel.astro';
+---
+
+<section class="py-20 flex flex-col items-start lg:flex-row lg:items-center lg:justify-between lg:gap-16">
+  <div class="lg:flex-1">
+    <PortraitCarousel class="w-16 h-16 mb-8 lg:hidden" />
+    <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight mb-6">
+      i run an agency, make videos, and build tools with code.
+    </h2>
+    <p class="text-zinc-400 text-lg leading-relaxed max-w-sm md:max-w-md">
+      this is where i write about all of it.
+    </p>
+    <div class="mt-8">
+      <a href="/blog" class="inline-block bg-primary hover:bg-primary-hover text-white px-6 py-3 rounded-md text-sm font-semibold transition-colors">
+        read the blog
+      </a>
+    </div>
+  </div>
+  <PortraitCarousel class="hidden lg:block w-48 h-48 xl:w-56 xl:h-56 shrink-0" />
+</section>

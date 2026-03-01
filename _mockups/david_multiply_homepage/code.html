@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>David Multiply - Editorial</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#6366f1",
+                        "background-dark": "#0a0a0a",
+                        "card-dark": "#111118",
+                        "border-dark": "#1f1f23",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        @layer base {
+            body {
+                @apply bg-background-dark text-white font-display antialiased;
+            }
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="overflow-x-hidden">
+<nav class="sticky top-0 z-50 px-4 py-4 bg-background-dark border-b border-border-dark">
+<div class="flex items-center justify-between max-w-lg mx-auto">
+<div class="flex items-center gap-3">
+<div class="w-7 h-7 rounded-sm bg-primary flex items-center justify-center">
+<span class="text-white font-bold text-[10px]">DM</span>
+</div>
+<h1 class="text-base font-bold tracking-tight">David Multiply</h1>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-gray-400 text-xl cursor-pointer">search</span>
+<span class="material-symbols-outlined text-gray-400 text-xl cursor-pointer">menu</span>
+</div>
+</div>
+</nav>
+<main class="max-w-lg mx-auto px-5">
+<section class="py-20 flex flex-col items-start">
+<div class="w-16 h-16 rounded-full mb-8 overflow-hidden grayscale">
+<div class="w-full h-full bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDTfgUPjDs6iiSpuP1LFJZoS6ZkbLGn8c4Wiq3IeVgewEYsWkXf_JJjjqcNNnIOrHOe80r4Spm1BQ9ITed9fTTz2BY9otqKfIe_UptS065lJeMGAsf3uxCLjKCu5n2YuZfQ8HgQaLpwsskowtRRZjSVDyuX9y0vjnVihqdV3ou0t1RHlp2nx0zWmwDDSJAMUruAHPDsRJpdIhShCP3a_Zvxacs1KbLq7g8gjZvWemAvruAEU3pKLQSG5OkU4tf4eiI-LXhaVAnuTjrU')"></div>
+</div>
+<h2 class="text-4xl font-bold leading-[1.1] tracking-tight mb-6">
+            I build systems, break plateaus, and write about all of it.
+        </h2>
+<p class="text-gray-400 text-lg leading-relaxed max-w-sm">
+            Creator &amp; Agency Owner. Sharing high-performance frameworks for the modern entrepreneur.
+        </p>
+<div class="mt-8">
+<button class="bg-primary hover:bg-indigo-600 text-white px-6 py-3 rounded-md text-sm font-semibold transition-colors">
+                Start Reading
+            </button>
+</div>
+</section>
+<section class="py-16 border-t border-border-dark">
+<div class="flex items-center justify-between mb-8">
+<h3 class="text-sm font-bold uppercase tracking-widest text-gray-500">Featured</h3>
+</div>
+<div class="bg-card-dark border border-border-dark rounded-xl overflow-hidden">
+<div class="aspect-video w-full bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC601UEhkc22srpSj_RuV2ykXCTSYUO08fWhxzpUakcavlE2_9aQWnAhlpRp74z8buhLV1-vc70oDI0W3wcm7oZ0rSFQiUFxeU2pCK5dp_jRPKthqtO7oWa8W5NuJDNyLeHebF7FFkJevb3gocVqimZKfUpS7o13vg2R1AOY7FMWShtEzfis75nErV5WDfkGsgpcDETQduc55fVngu4Jqdtz08JcjCCpa-UuxIQL73q03yoW7mSYgPBu2sLV7ZP600ql3dPcaeitwLS')"></div>
+<div class="p-6">
+<span class="text-primary text-xs font-bold uppercase tracking-wider mb-3 block">Self-Improvement</span>
+<h4 class="text-2xl font-bold mb-3 leading-snug">Systems vs Goals: The 2026 Framework</h4>
+<p class="text-gray-400 text-base mb-6 line-clamp-2">
+                    Why your goals are holding you back from actual progress and how to build a routine that automates success.
+                </p>
+<div class="flex items-center gap-3 text-xs text-gray-500 font-medium">
+<span>Jan 12, 2026</span>
+<span class="w-1 h-1 rounded-full bg-gray-700"></span>
+<span>8 min read</span>
+</div>
+</div>
+</div>
+</section>
+<section class="py-16 border-t border-border-dark">
+<div class="flex items-center gap-6 overflow-x-auto mb-10 no-scrollbar text-sm font-bold uppercase tracking-widest">
+<button class="whitespace-nowrap text-white border-b-2 border-primary pb-2">Latest</button>
+<button class="whitespace-nowrap text-gray-500 hover:text-white pb-2 transition-colors">Systems</button>
+<button class="whitespace-nowrap text-gray-500 hover:text-white pb-2 transition-colors">Business</button>
+<button class="whitespace-nowrap text-gray-500 hover:text-white pb-2 transition-colors">Journal</button>
+</div>
+<div class="space-y-12">
+<article class="flex flex-col gap-4">
+<div class="flex justify-between items-start gap-4">
+<div class="flex-1">
+<span class="text-primary text-[10px] font-bold uppercase tracking-widest mb-2 block">Building in Public</span>
+<h5 class="text-lg font-bold leading-tight mb-2">My Agency's $50k/mo Tech Stack</h5>
+<p class="text-sm text-gray-400 line-clamp-2">The exact tools and automation flows we use to run a lean six-figure operation.</p>
+</div>
+<div class="w-24 h-24 rounded-lg bg-cover bg-center shrink-0 border border-border-dark" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAFLlXbT-BrhpLjBULlOAH0-6PrF2m9F_r7I0jOzwwfSqGg4GpOg9y4fNnKLSpn32rLbfQfdvaOqP6EryzxWHZAVylzlOIJ2joFanFw3tcCL3Imhd-Urez2wnsmyd5qUnjwoeD0Z0xP5qvWB1KrKPusz8jDzChfxTGJtpfWDthD1QqcTIfV1-1pfD5X8eiTVkvv23kRbP_okaamgVNSRIyHRFbAepFSaYRZucmWCFNR-6l9r7BAHmktR2kNdrfl8DQorJEL7DNKsE1M')"></div>
+</div>
+<div class="text-[11px] text-gray-500 font-medium">Dec 28 • 5 min read</div>
+</article>
+<article class="flex flex-col gap-4">
+<div class="flex justify-between items-start gap-4">
+<div class="flex-1">
+<span class="text-primary text-[10px] font-bold uppercase tracking-widest mb-2 block">Self-Improvement</span>
+<h5 class="text-lg font-bold leading-tight mb-2">The 4 AM Myth: Why Rest is Your Competitive Edge</h5>
+<p class="text-sm text-gray-400 line-clamp-2">How optimizing for recovery led to a 40% increase in output over brute-force discipline.</p>
+</div>
+<div class="w-24 h-24 rounded-lg bg-cover bg-center shrink-0 border border-border-dark" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuANm22S0rkBcIdl9Cghe25OzO5e8AtAhON4RrLohggBflXgzUFwRI4xalJ3TC_DEyD47BJczT6GPXv-KnATiaG_XNA9luVHt94Za1QFDotRilzHxZ2e2WZPZ2xSOsgARCEaaA_sYUGz4pG7aUAQOldMnGnHcHL1Yjdfo8kJm_aSvkV3JqSyizPu7Hpd5OYazL49kvSLnHm9Exi5UNGOTuUhGWm_f4wXJOcGsaD1ZhwaWWeKmTUQMw7-c-ABI0UTKy3zaPaDUVepQFhR')"></div>
+</div>
+<div class="text-[11px] text-gray-500 font-medium">Dec 20 • 12 min read</div>
+</article>
+<article class="flex flex-col gap-4">
+<div class="flex justify-between items-start gap-4">
+<div class="flex-1">
+<span class="text-primary text-[10px] font-bold uppercase tracking-widest mb-2 block">Misc</span>
+<h5 class="text-lg font-bold leading-tight mb-2">My Favorite Gear for Remote Creative Work</h5>
+<p class="text-sm text-gray-400 line-clamp-2">A curated list of minimalist hardware that actually improves the workflow.</p>
+</div>
+<div class="w-24 h-24 rounded-lg bg-cover bg-center shrink-0 border border-border-dark" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCFYh6YpsjCo8t9woLMC_gamyPlSK5SGRdijhkTLrBE_-Xy2x4S7cDuBRLokjS19bZ4UUE6J8352E-q54M6PgH1E4gierNzTImW18HBnopXjGKIXGF5OUqnhJArmGRrXkptf7cjeeg9y5l5NwbYkdH5Oz53wdL14BOWWXcmEOzUe-uDLd6D5V5OiMTk906LltlSH5IlshXTeUm6t8roF88jJzOrptd5z_MHWaW5P2nAwFvRJ3I7S8fDjqQFuG2UtiPAeEptp2l1qEIF')"></div>
+</div>
+<div class="text-[11px] text-gray-500 font-medium">Dec 15 • 6 min read</div>
+</article>
+</div>
+<button class="w-full mt-12 py-4 border border-border-dark rounded-md text-sm font-bold text-gray-400 hover:text-white hover:border-gray-600 transition-all">
+            View All Posts
+        </button>
+</section>
+<section class="py-16 border-t border-border-dark">
+<h3 class="text-sm font-bold uppercase tracking-widest text-gray-500 mb-8">Channels</h3>
+<div class="grid grid-cols-2 gap-4">
+<a class="bg-card-dark p-6 rounded-xl border border-border-dark group" href="#">
+<span class="material-symbols-outlined text-gray-500 group-hover:text-white transition-colors mb-4 block">play_circle</span>
+<h6 class="font-bold text-sm mb-1">YouTube</h6>
+<p class="text-xs text-gray-500">Weekly Vlogs</p>
+</a>
+<a class="bg-card-dark p-6 rounded-xl border border-border-dark group" href="#">
+<span class="material-symbols-outlined text-gray-500 group-hover:text-white transition-colors mb-4 block">groups</span>
+<h6 class="font-bold text-sm mb-1">Discord</h6>
+<p class="text-xs text-gray-500">Private Community</p>
+</a>
+</div>
+</section>
+<section class="py-20 border-t border-border-dark">
+<div class="bg-card-dark p-10 rounded-2xl border border-border-dark text-center">
+<h3 class="text-2xl font-bold mb-3">The Weekly System</h3>
+<p class="text-gray-400 text-sm mb-8 max-w-xs mx-auto">One actionable insight for high-performers, delivered every Sunday.</p>
+<div class="flex flex-col gap-3 max-w-xs mx-auto">
+<input class="w-full bg-background-dark border border-border-dark rounded-md px-4 py-3 text-sm focus:ring-1 focus:ring-primary focus:border-primary outline-none text-white placeholder:text-gray-600 transition-all" placeholder="Enter your email" type="email"/>
+<button class="w-full bg-primary py-3 rounded-md text-sm font-bold text-white transition-colors">Join 15,000+ Creators</button>
+</div>
+</div>
+</section>
+</main>
+<footer class="border-t border-border-dark pt-16 pb-20 px-6">
+<div class="max-w-lg mx-auto flex flex-col items-center">
+<div class="flex gap-8 mb-10 text-gray-500">
+<span class="material-symbols-outlined cursor-pointer hover:text-white transition-colors text-xl">brand_awareness</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-white transition-colors text-xl">video_library</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-white transition-colors text-xl">mail</span>
+</div>
+<p class="text-[10px] text-gray-600 font-bold tracking-[0.2em] uppercase">© 2026 David Multiply</p>
+<div class="mt-6 flex gap-6 text-[10px] text-gray-600 font-bold uppercase tracking-widest">
+<a class="hover:text-white transition-colors" href="#">Privacy</a>
+<a class="hover:text-white transition-colors" href="#">Terms</a>
+<a class="hover:text-white transition-colors" href="#">Contact</a>
+</div>
+</div>
+</footer>
+
+</body></html>

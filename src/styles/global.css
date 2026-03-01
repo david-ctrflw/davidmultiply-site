@@ -1,0 +1,112 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #6366f1;
+  --color-primary-hover: #4f46e5;
+  --color-bg: #0a0a0a;
+  --color-surface: #111118;
+  --color-border: #1f1f23;
+  --color-border-subtle: #26262a;
+
+  --font-display: "Plus Jakarta Sans", sans-serif;
+}
+
+/* Base */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-display);
+  background-color: var(--color-bg);
+  color: white;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Prose styles for blog content */
+.prose p {
+  color: #a1a1aa;
+  line-height: 1.75;
+  margin-bottom: 1.5rem;
+}
+
+.prose h2 {
+  color: #ffffff;
+  font-weight: 700;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.prose h3 {
+  color: #ffffff;
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  font-size: 1.25rem;
+}
+
+.prose strong {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.prose a {
+  color: var(--color-primary);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.prose a:hover {
+  color: var(--color-primary-hover);
+}
+
+.prose blockquote {
+  border-left: 2px solid var(--color-primary);
+  padding-left: 1.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  margin: 2.5rem 0;
+  font-style: italic;
+  color: #ffffff;
+  font-size: 1.25rem;
+  line-height: 1.6;
+}
+
+.prose ul {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0;
+}
+
+.prose ul li {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  color: #cbd5e1;
+  margin-bottom: 1rem;
+}
+
+.prose ul li::before {
+  content: "✓";
+  color: var(--color-primary);
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 0.125rem;
+}
+
+.prose img {
+  border-radius: 0.75rem;
+  margin: 2rem 0;
+}
+
+/* No scrollbar utility */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

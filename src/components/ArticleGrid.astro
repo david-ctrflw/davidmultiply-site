@@ -1,0 +1,77 @@
+---
+import ArticleCard from './ArticleCard.astro';
+
+interface Post {
+  title: string;
+  description: string;
+  category: string;
+  date: string;
+  readTime: string;
+  image?: string;
+  imageAlt?: string;
+  slug: string;
+}
+
+interface Props {
+  posts: Post[];
+}
+
+const { posts } = Astro.props;
+const categories = ['All', ...new Set(posts.map(p => p.category))];
+---
+
+<section class="py-16 border-t border-border">
+  <div class="flex items-center gap-6 overflow-x-auto mb-10 no-scrollbar text-sm font-bold uppercase tracking-widest" id="home-category-tabs">
+    {categories.map((cat, i) => (
+      <button
+        data-filter={cat}
+        class:list={[
+          'whitespace-nowrap pb-2 transition-colors cursor-pointer',
+          i === 0 ? 'text-white border-b-2 border-primary' : 'text-zinc-500 hover:text-white'
+        ]}
+      >
+        {cat}
+      </button>
+    ))}
+  </div>
+  <div class="space-y-12 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-12 md:space-y-0" id="home-posts-grid">
+    {posts.map((post) => (
+      <div data-category={post.category}>
+        <ArticleCard {...post} />
+      </div>
+    ))}
+  </div>
+  <a href="/blog" class="block w-full mt-12 py-4 border border-border rounded-md text-sm font-bold text-zinc-400 hover:text-white hover:border-zinc-600 transition-all text-center">
+    View All Posts
+  </a>
+</section>
+
+<script>
+  const tabs = document.getElementById('home-category-tabs');
+  const grid = document.getElementById('home-posts-grid');
+  if (tabs && grid) {
+    const buttons = tabs.querySelectorAll<HTMLButtonElement>('[data-filter]');
+    const cards = grid.querySelectorAll<HTMLElement>('[data-category]');
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const filter = btn.dataset.filter;
+
+        buttons.forEach(b => {
+          b.classList.remove('text-white', 'border-b-2', 'border-primary');
+          b.classList.add('text-zinc-500');
+        });
+        btn.classList.remove('text-zinc-500');
+        btn.classList.add('text-white', 'border-b-2', 'border-primary');
+
+        cards.forEach(card => {
+          if (filter === 'All' || card.dataset.category === filter) {
+            card.style.display = '';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  }
+</script>
