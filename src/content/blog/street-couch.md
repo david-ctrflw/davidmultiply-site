@@ -32,7 +32,7 @@ one day i went to see a danish designer rug — those small raya rugs— that th
 
 eventually she showed me this rug that wasn't even listed for sale. a reverse peruvian flat weave by jonathan adler. it was so sick i couldn't not ask. she didn't want to sell it at first — wouldn't budge at all. but i was pretty incessant and eventually she came around.
 
-![geometric rug and wassily chair on hardwood floors](/images/blog-geometric-rug-chair.jpg)
+![geometric rug and wassily chair on hardwood floors](/images/blog-geometric-rug-chair.png)
 
 i kept that one for a while. and the wassily chair i found on marketplace. some pieces you hold onto longer than others.
 
