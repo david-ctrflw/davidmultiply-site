@@ -5,8 +5,8 @@ category: "Entrepreneurship"
 publishDate: 2026-02-28
 readTime: "4 min read"
 featured: false
-image: "/images/blog-geometric-rug-chair.jpg"
-imageAlt: "geometric rug and wassily chair on hardwood floors"
+image: "/images/blog-fabric-swatches.jpg"
+imageAlt: "hand holding fabric swatches in front of a beat-up leather couch at a reupholstery shop"
 ---
 
 ## the couch
@@ -18,6 +18,8 @@ i pulled over.
 upon a closer look at it, and i knew immediately it was designer level.. some handcrafted type shit. probably italian-built, maybe 80s or 90s? only because the design style was unique, i don't think it could be mass produced. steel frame, hardwood bones. the kind of craftsmanship they just don't do anymore. the leather was cooked but the structure was perfect. i called my older brother since he was the only one with a vehicle capable of transport. he came through with the SUV and loaded it in.
 
 we drove it straight to a reupholstery shop in silver lake. Moti Roma is the name. didn't even go home first.
+
+![hand holding fabric swatches at the reupholstery shop](/images/blog-fabric-swatches.jpg)
 
 the guy at the shop laid out swatches for me. while i was checking them out, he confirmed it was italian made but couldn't tell me the exact year.
 i landed on a chocolate brown tweed. it was the only chocolate color he had and i had just seen la flame's brown lambo on ig (this was ~2019). 
@@ -31,6 +33,8 @@ around this same time i was always hunting for pieces. not like a full-time thin
 one day i went to see a danish designer rug — those small raya rugs— that this older lady had listed from her loft in LA. she invited me in and we just started talking. i was looking around at the pieces she had in her place, asking her about them, asking why she was letting stuff go. and the conversation just kept going.
 
 eventually she showed me this rug that wasn't even listed for sale. a reverse peruvian flat weave by jonathan adler. it was so sick i couldn't not ask. she didn't want to sell it at first — wouldn't budge at all. but i was pretty incessant and eventually she came around.
+
+![geometric rug and wassily chair on hardwood floors](/images/blog-geometric-rug-chair.jpg)
 
 i kept that one for a while. and the wassily chair i found on marketplace. some pieces you hold onto longer than others.
 

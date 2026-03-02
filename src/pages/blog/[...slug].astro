@@ -55,8 +55,8 @@ const relatedPosts = allPosts
     </header>
 
     {post.data.image && (
-      <div class="rounded-xl overflow-hidden mb-12 aspect-[16/9]">
-        <img alt={post.data.imageAlt || post.data.title} class="w-full h-full object-cover" src={post.data.image} />
+      <div class="rounded-xl overflow-hidden mb-12">
+        <img alt={post.data.imageAlt || post.data.title} class="w-full h-auto object-contain" src={post.data.image} />
       </div>
     )}
 
