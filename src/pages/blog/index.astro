@@ -9,7 +9,9 @@ import { getCollection } from 'astro:content';
 const allPosts = await getCollection('blog', ({ data }) => !data.draft);
 const sortedPosts = allPosts.sort((a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime());
 
-const categories = ['All', ...new Set(sortedPosts.map(p => p.data.category))];
+const definedCategories = ['Entrepreneurship', 'Self-Improvement', 'Building in Public'];
+const postCategories = [...new Set(sortedPosts.map(p => p.data.category))];
+const categories = ['All', ...new Set([...definedCategories, ...postCategories])];
 
 function formatDate(date: Date) {
   return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });

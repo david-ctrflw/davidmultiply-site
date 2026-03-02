@@ -17,7 +17,9 @@ interface Props {
 }
 
 const { posts } = Astro.props;
-const categories = ['All', ...new Set(posts.map(p => p.category))];
+const definedCategories = ['Entrepreneurship', 'Self-Improvement', 'Building in Public'];
+const postCategories = [...new Set(posts.map(p => p.category))];
+const categories = ['All', ...new Set([...definedCategories, ...postCategories])];
 ---
 
 <section class="py-16 border-t border-border">
